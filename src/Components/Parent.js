@@ -10,12 +10,13 @@ class Parent extends React.Component {
   }
   handleChangeOfInput = (e) => {
     e.preventDefault();
+    console.log(e.target.value);
     this.setState({
       inputValue: e.target.value,
     });
   }
   render() {
-    const inputValueChild = this.state.InputValue;
+    const inputValueChild = this.state.inputValue;
     return (
       <>
       <h2>Parent Component</h2>
