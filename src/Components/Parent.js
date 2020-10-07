@@ -5,22 +5,23 @@ class Parent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      InputValue: '',
+      inputValue: '',
     }
   }
   handleChangeOfInput = (e) => {
     e.preventDefault();
     this.setState({
-      InputValue: e.target.value,
+      inputValue: e.target.value,
     });
   }
   render() {
-    const InputValueChild = this.state.InputValue;
+    const inputValueChild = this.state.InputValue;
     return (
       <>
-      <h2>Hi, Changes reflected to data in parent</h2>
-      <h2>{InputValueChild}</h2>
-      <Child value={InputValueChild} onChangeInput={this.handleChangeOfInput}></Child>
+      <h2>Parent Component</h2>
+      <h2>Hi, Changes are reflected below in parent for change of data in child</h2>
+      {inputValueChild ? <p>{inputValueChild}</p> : <p>Enter child Text</p>}
+      <Child value={inputValueChild} onChangeInput={this.handleChangeOfInput}></Child>
       </>
     );
   }
